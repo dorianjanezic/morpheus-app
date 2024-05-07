@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ethers } from 'ethers';
-import { Input, InputWrapper, Button, Group, Text, Flex, Box, Card, Highlight, Loader } from '@mantine/core';
+import { Input, Button, Text, Flex, Box, Card, Loader, Title } from '@mantine/core';
 import abi from '../../public/ABI/MorpheusABI.json'
 
 const GetBalance: React.FC = () => {
@@ -11,7 +11,7 @@ const GetBalance: React.FC = () => {
     const [totalWeights, setTotalWeights] = useState<string>('');
     const [addressWeights, setAddressWeights] = useState<string>('');
     const [error, setError] = useState<string | null>(null);
-    const [loading, setLoading] = useState<boolean>(false); // New loading state
+    const [loading, setLoading] = useState<boolean>(false);
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUserAddress(e.target.value);
     };
@@ -58,12 +58,17 @@ const GetBalance: React.FC = () => {
 
     return (
         <Box>
-            <Flex justify={"center"} gap={20}>
-                <Box w={"50%"}>
-                    <Input value={userAddress} onChange={handleInputChange} placeholder='Input your address' />
-                </Box>
-                <Button onClick={fetchBalance}>Check Balance</Button>
-            </Flex>
+            <Card shadow="sm" padding="lg" radius="md" withBorder>
+                <Title style={{ fontSize: '2rem', fontWeight: 700, textAlign: 'center', marginBottom: '2rem' }}>
+                    Morpheus Community Website
+                </Title>
+                <Flex justify={"center"} gap={20}>
+                    <Box w={"50%"}>
+                        <Input value={userAddress} onChange={handleInputChange} placeholder='Input your address' />
+                    </Box>
+                    <Button onClick={fetchBalance}>Check Balance</Button>
+                </Flex>
+            </Card>
             <Flex mt={5} justify={"center"}>
                 {error && <Text c={"red"}>Error: {error}</Text>}
             </Flex>

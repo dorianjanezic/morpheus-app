@@ -9,7 +9,21 @@ import '@mantine/core/styles.css';
 const queryClient = new QueryClient()
 
 const theme = createTheme({
-  /** Put your mantine theme override here */
+  colors: {
+    morpheus: [
+      "#e6feee",
+      "#d4f6e2",
+      "#adecc6",
+      "#82e0a7",
+      "#5ed68d",
+      "#46d17c",
+      "#38ce73",
+      "#28b561",
+      "#1ca254",
+      "#008c45"
+    ]
+  },
+  primaryColor: 'morpheus'
 });
 
 export default function App({ Component, pageProps }: AppProps) {
