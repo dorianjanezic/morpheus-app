@@ -3,9 +3,6 @@ import { ethers } from 'ethers';
 import { Input, Button, Text, Flex, Box, Card, Loader, Title } from '@mantine/core';
 import CardData from './Card';
 import abi from '../../public/ABI/MorpheusABI.json'
-import { ConnectButton } from '@rainbow-me/rainbowkit';
-import { useReadContract } from 'wagmi'
-import { log } from 'console';
 import Claim from './Claim';
 
 const GetBalance: React.FC = () => {
@@ -70,7 +67,10 @@ const GetBalance: React.FC = () => {
             <Title style={{ fontSize: '2rem', fontWeight: 700, textAlign: 'center', marginBottom: '2rem' }}>
                 Morpheus Community Website
             </Title>
-            <Card mb={20}>
+            <Flex mb={20} justify={"center"} gap={20}>
+                <Claim />
+            </Flex>
+            <Card shadow={"sm"} padding={"xl"} radius={"lg"}>
                 <Title size={"xl"} tt={"uppercase"} ta={"center"} mb={20}>Check Balance</Title>
                 <Flex justify={"center"} gap={20}>
                     <Box w={"50%"}>
@@ -82,9 +82,6 @@ const GetBalance: React.FC = () => {
                     {error && <Text c={"red"}>Error: {error}</Text>}
                 </Flex>
             </Card>
-            <Flex justify={"center"} gap={20}>
-                <Claim />
-            </Flex>
             {/* </Card> */}
             {loading ? <Flex mt={100} justify={"center"}><Loader size={"xl"} /></Flex> :
                 <Box mt={100}>

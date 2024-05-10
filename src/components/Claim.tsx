@@ -32,16 +32,17 @@ const Claim = () => {
 
     return (
         <>
-            <Card>
+            <Card shadow={"sm"} padding={"xl"} radius={"lg"}>
                 <Title size={"xl"} tt={"uppercase"} ta={"center"} mb={20}>Claim rewards</Title>
                 <List size='lg'>
-                    <List.Item>- <Code color='morpheus'>claim: 0.001</Code> - this is the amount of ETH that you will send with the transaction to pay for mint on the destination network. Any excess will be returned to you.</List.Item>
-                    <List.Item>- <Code color='morpheus'>poolId_: pool identifier</Code> enter 0 for capital providers pool or 1 for code providers pool.</List.Item>
-                    <List.Item>- <Code color='morpheus'>receiver_(address)</Code> Input the address that will receive the minted MOR tokens.</List.Item>
+                    <List.Item>- Connect your wallet.</List.Item>
+                    <List.Item>- <Code>claim: 0.001</Code> - this is the amount of ETH that you will send with the transaction to pay for mint on the destination network. Any excess will be returned to you.</List.Item>
+                    <List.Item>- <Code>poolId_: pool identifier</Code> enter 0 for capital providers pool or 1 for code providers pool.</List.Item>
+                    <List.Item>- <Code>receiver_(address)</Code> Input the address that will receive the minted MOR tokens.</List.Item>
                 </List>
                 <Flex mt={20} gap={20} justify={"center"}>
-                    <Input value={pool} onChange={handlePoolChange} placeholder="Pool ID" required></Input>
-                    <Input value={address} onChange={handleAddressChange} placeholder="Address" required></Input>
+                    <Input w={100} value={pool} onChange={handlePoolChange} placeholder="Pool ID" required></Input>
+                    <Input w={400} value={address} onChange={handleAddressChange} placeholder="Address" required></Input>
                     <Button
                         disabled={isPending}
                         onClick={Claim}

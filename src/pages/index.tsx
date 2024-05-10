@@ -2,17 +2,18 @@ import GetBalance from "@/components/GetBalance";
 import Wrapper from "@/components/Wrapper";
 import { Image, Box, Flex } from "@mantine/core";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import Claim from "@/components/Claim";
+// import GetPrice from "@/components/GetPrice";
+import FetchPrice from "@/components/FetchPrice";
 
 export default function Home() {
   return (
     <Box>
-      <Flex justify={"end"} p={20}>
+      <Flex justify={"space-between"} p={20}>
+        <FetchPrice />
         <ConnectButton />
       </Flex>
       <Wrapper>
         <GetBalance />
-        {/* <Claim /> */}
       </Wrapper>
     </Box>
   );
