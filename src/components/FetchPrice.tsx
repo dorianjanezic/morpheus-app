@@ -17,9 +17,7 @@ const FetchPrice = () => {
                 // Make API call to fetch latest prices
                 const response = await fetch(`https://api.dexscreener.com/latest/dex/pairs/arbitrum/0xE5Cf22EE4988d54141B77050967E1052Bd9c7F7A`);
                 const data = await response.json();
-
-                console.log(data.pairs[0].volume);
-
+                // console.log(data.pairs[0].volume);
 
                 // Extract prices from response data
                 const morPrice = data.pairs[0].priceUsd;

@@ -2,7 +2,6 @@ import GetBalance from "@/components/GetBalance";
 import Wrapper from "@/components/Wrapper";
 import { Image, Box, Flex } from "@mantine/core";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-// import GetPrice from "@/components/GetPrice";
 import FetchPrice from "@/components/FetchPrice";
 
 export default function Home() {
