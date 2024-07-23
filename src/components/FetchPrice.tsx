@@ -43,7 +43,7 @@ const FetchPrice = () => {
 
     // Render component content
     return (
-        <Card shadow={"sm"} padding={"xl"} radius={"lg"}>
+        <Card shadow={"sm"} padding={"sm"} radius={"lg"}>
             <Flex gap={0}>
                 <Text>MOR Price: </Text><Text ml={5} mr={20} fw={700}> $ {priceMOR}</Text>
                 <Text>Liquidity: </Text><Text ml={5} fw={700}> $ {liqudity.toFixed(1)} M</Text>
